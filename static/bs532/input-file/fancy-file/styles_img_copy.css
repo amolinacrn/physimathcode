@@ -1,0 +1,33 @@
+.upload-img {
+  display: none;
+}
+.upload-img + label {
+  display: flex;
+  flex: 1;
+}
+
+.upload-img__upload-name {
+  background: #ec0303;
+  border: 1px solid #ff0000;
+  border-radius: 4px 0 0 4px;
+}
+
+.upload-img__upload-img-name {
+  background: #888887;
+  flex: 1;
+  width: 0px;
+  cursor: pointer;
+  border: 1px solid #ff0000;
+  width: 0px;
+}
+
+.upload-img__upload-img-name span {
+  position: relative;
+  display: block;
+  color: rgb(255, 0, 0);
+  text-align: center;
+  line-height: 180px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

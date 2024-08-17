@@ -1,0 +1,300 @@
+{% extends "basehv.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+<!--ESTILO 1-->
+
+<script>
+
+    function RegistroProduccionAcademica(condicional, id_explab = '{{ id_actual }}',
+        autores_trabajo, nombre_trabajo,
+        pais_publicacion, fecha_publicacion, nombre_revista,
+        area_concentracion, linea_pesquisa, doi_link_publicacion) {
+
+        experiencia_laboral.innerHTML = ``
+        registro_experiencia_laboral.innerHTML = `
+<div class="class_div_div">
+  <div class="class_div" style="font-size:15px;border-top: rgb(8, 26, 66) 5px solid; border-radius: 10px;">
+    {% if errform %}
+    <div style="margin:0px; padding: 1px;background-color: rgb(255, 0, 0); width:63%; margin-left: 5cm;">
+      <h5 style="color: white;margin-top:5px;">
+        <b>&nbsp&nbsp
+          No se ha podido enviar los datos, por favor revise el formulario
+        </b>
+      </h5>
+    </div>
+    <br>
+    {% endif%}
+   
+ <table>
+      <tr>
+        <td width="3%">
+          <img src="{% static 'bs532/img/imghv/fad.png' %}" style="width: 100%;transform: scale(0.8)" alt="My image">
+        </td>
+        <td width="1%">
+
+        </td>
+        <td style="font-size:15px;">
+          <b class="text-uppercase">Registro producción académica</b>
+        </td>
+      </tr>
+    </table>
+
+    <hr>
+    <br>
+    <form enctype="multipart/form-data" method="post" action="${id_explab}">
+      {% csrf_token %}
+      <table width="100%">
+          <tr style="background-color: #F3F3F3;">
+          <td>
+            {{form.autores_trabajo|as_crispy_field}}
+          </td>
+           <td width="2%"></td>
+          <td>
+            {{form.nombre_trabajo|as_crispy_field}}
+          </td>
+           <td width="2%"></td>
+          <td>
+            {{form.pais_publicacion|as_crispy_field}}
+          </td>
+
+        </tr>
+         <tr style="background-color: #F3F3F3;">
+          <td>
+            {{form.fecha_publicacion|as_crispy_field}}
+          </td>
+           <td width="2%"></td>
+          <td>
+             {{form.nombre_revista|as_crispy_field}}
+           
+          </td>
+           <td width="2%"></td>
+          <td>
+            {{form.area_concentracion|as_crispy_field}}
+          </td>
+        </tr>
+
+          <tr style="background-color: #F3F3F3;">
+
+          <td>
+            {{form.linea_pesquisa|as_crispy_field}}
+          </td>
+           <td width="2%"></td>
+          <td>
+            {{form.doi_link_publicacion|as_crispy_field}}
+          </td>
+        </tr>
+      </table>
+      <br>
+      <hr>
+
+      <table width="100%">
+        <tr>
+          <td width="90%">
+            <button class="btn btn-sm btn-outline-primary float-end" type="submit">
+              <b>Guardar</b>
+            </button>
+          </td>
+          <td width="1%">
+          </td>
+          <td>
+
+          <button onclick="ProduccionAcademicaOK()" class="btn btn-outline-danger btn-sm ">
+            Cancelar
+          </button>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+
+  </div>
+  <br>
+  </div>`
+
+        if (condicional) {
+            document.getElementById("id_autores_trabajo").value = autores_trabajo;
+            document.getElementById("id_nombre_trabajo").value = nombre_trabajo;
+            document.getElementById("id_pais_publicacion").value = pais_publicacion;
+            document.getElementById("id_fecha_publicacion").value = fecha_publicacion;
+            document.getElementById("id_nombre_revista").value = nombre_revista;
+            document.getElementById("id_area_concentracion").value = area_concentracion;
+            document.getElementById("id_linea_pesquisa").value = linea_pesquisa;
+            document.getElementById("id_doi_link_publicacion").value = doi_link_publicacion;
+        } else {
+
+        }
+
+    }
+
+    function ProduccionAcademicaOK() {
+        registro_experiencia_laboral.innerHTML = ``
+        experiencia_laboral.innerHTML = `
+        <div class="class_div_class">
+  <div class="class_div" style="font-size:15px;border-top: rgb(8, 26, 66) 5px solid; border-radius: 10px;">
+  
+    <table>
+      <tr>
+        <td width="3%">
+          <img src="{% static 'bs532/img/imghv/fad.png' %}" style="width: 100%;transform: scale(0.8)" alt="My image">
+        </td>
+        <td width="1%">
+
+        </td>
+        <td style="font-size:15px;">
+          <b class="text-uppercase">Producción académica</b>
+        </td>
+        <td style="font-size:15px;">
+          <a href="{% url 'menuhv' %}" class="btn btn-sm btn-outline-danger float-end">
+            <img src="{% static 'bs532/img/atras.svg' %}" alt="My image" style="width: 25px;transform: scale(1)""> 
+            <b>salir</b>
+          </a>
+        </td>
+
+      </tr>
+    </table>
+      <br>
+    <table width="100%">
+      <tr>
+        <td width="49%"></td>
+        <td>
+          <a onclick="RegistroProduccionAcademica()">
+            <img class="botonexper" style=" border-radius: 5px;border: 1px solid; color: rgba(219, 146, 10, 0.514);"
+              src=" {% static 'bs532/img/imghv/agregar_exp.png' %}" width="88%"  />
+          </a>
+        </td>
+        <td width="35%">
+          <div class="input-group mb-0">
+              <span class="input-group-text" id="basic-addon1">buscar</span>
+            <input type="text" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div style="height:8px;width: 100%; background-color:rgba(255, 0, 0, 0) ;"></div>
+   <table style="width:100%" class="ptable ptbody">
+  <tr class="ptr">
+    <td class="ptd">
+      <b class="b">
+        Autores
+      </b>
+    </td>
+
+    <td class="ptd">
+      <b>Nombre del trabajo</b>
+    </td>
+
+    <td class="ptd">
+      <b>País publicación</b>
+    </td>
+
+    <td class="ptd">
+      <b>Fecha de publicación</b>
+    </td>
+
+    <td class="ptd">
+      <b>Nombre de la  revista</b>
+    </td>
+
+    <td class="ptd">
+      <b>Area de concentración</b>
+    </td>
+
+    <td class="ptd">
+      <b>Línea de investigación</b>
+    </td>
+
+    <td class="ptd">
+      <b>Link o DOI</b>
+    </td>
+
+    <td class="ptd">
+      <b>Opciones</b>
+    </td>
+
+  </tr>
+
+  {% for qrdat in querydat %}
+  <tr class="askdj">
+    <td class="ptd">
+      {{ qrdat.autores_trabajo }}
+    </td>
+
+    <td class="ptd">
+      {{ qrdat.nombre_trabajo }}
+    </td>
+
+    <td class="ptd">
+
+    {{qrdat.pais_publicacion}}
+    </td>
+
+    <td class="ptd">
+      {{ qrdat.fecha_publicacion|date:"d/m/Y" }}
+    </td>
+
+    <td class="ptd">
+      {{ qrdat.nombre_revista }}
+    </td>
+
+    <td class="ptd">
+      {{ qrdat.area_concentracion }}
+    </td>
+
+    <td class="ptd">
+      {{ qrdat.linea_pesquisa }}
+    </td>
+
+    <td class="ptd">
+        <a href={{qrdat.doi_link_publicacion}} target="_blank" style="margin-left:0.6cm">
+             <img src=" {% static 'bs532/img/link.png' %}" width="22px"></a>
+         <a/> 
+    </td>
+   <td class="ptd">
+    <a onclick="RegistroProduccionAcademica(
+              true,'{{ qrdat.id }}','{{qrdat.autores_trabajo}}',' {{ qrdat.nombre_trabajo }}',' {{ qrdat.pais_publicacion }}',
+              '{{ qrdat.fecha_publicacion|date:"Y-m-d"}}',' {{ qrdat.nombre_revista }}','  {{ qrdat.area_concentracion }}',
+              '{{ qrdat.linea_pesquisa }}', ' {{ qrdat.doi_link_publicacion }}')" style="cursor:pointer">
+      <img src=" {% static 'bs532/img/editar.svg' %}" width="22px" style="margin-left:0.2cm"></a>
+    </a>
+
+    <a href="{% url 'del_prod_acad' qrdat.id %}">
+      <img src="{% static 'bs532/img/eliminar.svg' %}" width="22px">
+    </a>
+                        
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+  </div>
+  <br>
+</div>`
+    }
+</script>
+
+
+<div id="registro_experiencia_laboral"></div>
+<div id="experiencia_laboral"></div>
+
+{% if errform %}
+<script>
+    window.addEventListener("load", async () => {
+        await RegistroProduccionAcademica();
+    });
+
+</script>
+{% else %}
+<script>
+    const registro_experiencia_laboral = document.getElementById("registro_experiencia_laboral");
+    const experiencia_laboral = document.getElementById("experiencia_laboral");
+    window.addEventListener("load", async () => {
+        await ProduccionAcademicaOK();
+    });
+</script>
+{% endif %}
+
+{% endblock content %}

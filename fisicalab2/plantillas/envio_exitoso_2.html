@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content%}
+
+<div class="class_registro">
+  <div style="width: 50rem;">
+
+    <center>
+      <b style="font-size:30px;">
+        Muy bien, su informe fue enviado con exito.
+        <p>
+      </b>
+      Ahora pude regresar nuevamente al formulario y diligenciar un nuevo informe
+    </center>
+    <a class="btn btn-sm btn-primary float-end" href="{% url 'ajuste_de_curvas' %} ">Regresar al informe</a>
+    </br>
+
+
+  </div>
+</div>
+
+{% endblock %}

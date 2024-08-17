@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+
+
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+
+<div class="class_div" style="font-size:18px;">
+
+
+  <table>
+    <tr>
+      <td>
+        <b>
+          <h3>
+            INFORME 2: Ajuste de Curvas
+          </h3>
+        </b>
+        Facultad de Ciencias Exactas y Naturales, Departamento de Física
+
+
+      </td>
+
+      <td width="30%">
+        <a href="http://sired.udenar.edu.co/id/eprint/7467">
+          <img src="{% static 'bs532/img/fislab1.png' %}" style="width: 100%" alt="My image">
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" border="0" style="background-color: rgb(91,91,91);">
+    <tr>
+      <td>
+
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+
+  <!-- Formulario simple que enviará una petición POST   -->
+
+  <form enctype="multipart/form-data" action="{% url 'enviar_datos' %}" method="post">
+
+    {% csrf_token %}
+
+    <div class="row">
+
+      <div class="form-group col-md-6 mb-0">
+        {{ form.nombre|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-3 mb-0">
+        {{ form.programa|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+        {{ form.calendario|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-1 mb-0">
+        {{ form.grupo|as_crispy_field }}
+      </div>
+    </div>
+    </br>
+    <b style="color: red;">
+      Escriba correctamente los datos y cálculos. Sustente siempre sus respuestas. No olvide cargar
+      el informe en físico.
+    </b>
+
+    <b>
+      <p>
+        </br>
+
+        <li>
+          Ajuste de datos a una línea recta (Sección 2.4.1)
+        </li>
+
+
+    </b>
+
+    <br>
+
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          Longitud del resorte sin estirar $L'_{0}=$
+        </td>
+        <td>
+
+          {{ form.mensurando_1|as_crispy_field }}
+
+        </td>
+
+        <td>
+          $\pm$
+        </td>
+
+        <td>
+
+          {{ form.error_1|as_crispy_field }}
+
+        </td>
+
+        <td>
+          cm
+        </td>
+
+      </tr>
+    </table>
+    {{ form.sustentacion_1|as_crispy_field }}
+    </p>
+
+
+    <p>
+
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          Constante elástica del resorte $k'=$
+        </td>
+        <td>
+
+          {{ form.mensurando_2|as_crispy_field }}
+
+        </td>
+
+        <td>
+          $\pm$
+        </td>
+
+        <td>
+
+          {{ form.error_2|as_crispy_field }}
+
+        </td>
+
+        <td>
+          dina/cm
+        </td>
+
+      </tr>
+    </table>
+    {{ form.sustentacion_2|as_crispy_field }}
+    </p>
+
+    <p>
+
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          $\chi^2/\nu=$
+        </td>
+        <td>
+          {{ form.mensurando_3|as_crispy_field }}
+        </td>
+
+      </tr>
+    </table>
+    {{ form.sustentacion_3|as_crispy_field }}
+    </p>
+
+
+    <b>
+      <p>
+        </br>
+        <li>
+          Ajuste de datos a una línea recta (Sección 2.4.1)
+        </li>
+      </p>
+    </b>
+
+
+    <p>
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          Número inicial de núcleos $N'_{0}=$
+        </td>
+        <td>
+
+          {{ form.mensurando_4|as_crispy_field }}
+
+        </td>
+
+        <td>
+          $\pm$
+        </td>
+
+        <td>
+
+          {{ form.error_4|as_crispy_field }}
+
+        </td>
+
+      </tr>
+    </table>
+    {{ form.sustentacion_4|as_crispy_field }}
+    </p>
+
+    <p>
+
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          Constante de desintegración $\lambda'=$
+        </td>
+        <td>
+
+          {{ form.mensurando_5|as_crispy_field }}
+
+        </td>
+
+        <td>
+          $\pm$
+        </td>
+
+        <td>
+
+          {{ form.error_5|as_crispy_field }}
+
+        </td>
+
+        <td>
+          s$^{-1}$
+        </td>
+
+      </tr>
+    </table>
+    {{ form.sustentacion_5|as_crispy_field }}
+    </p>
+
+    <p>
+
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          $\chi^2/\nu=$
+        </td>
+        <td>
+
+          {{ form.mensurando_6|as_crispy_field }}
+
+        </td>
+
+      </tr>
+    </table>
+    {{ form.sustentacion_6|as_crispy_field }}
+    </p>
+
+
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+
+          Tiempo de vida media de la sustancia $\tau'=$
+
+        </td>
+        <td>
+
+          {{ form.mensurando_7|as_crispy_field }}
+
+        </td>
+
+        <td>
+          $\pm$
+        </td>
+
+        <td>
+
+          {{ form.error_7|as_crispy_field }}
+
+        </td>
+
+        <td>
+          s<h8>
+        </td>
+
+      </tr>
+    </table>
+    {{form.sustentacion_7|as_crispy_field }}
+
+    <br>
+
+    <p>Carge el soporte de su trabajo:</p>
+    {{form.soporte}}
+
+
+
+
+    <button class="btn btn-sm btn-primary float-end" type="submit">Enviar</button>
+
+  </form>
+
+
+
+</div>
+
+
+
+{% endblock content %}
+
+
+<!-- <label for="name">Nombre:</label!>
+            <input type="text" placeholder="escribe aqui" maxlength="5" name="el_dato_enviado"/ id="name">
+            -->

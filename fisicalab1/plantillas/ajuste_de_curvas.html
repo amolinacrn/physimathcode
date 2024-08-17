@@ -1,0 +1,473 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content%}
+
+
+<div class="class_div" style="font-size:18px;">
+
+
+  <table>
+    <tr>
+      <td>
+        <b>
+          <h3>
+            INFORME 2: Ajuste de Curvas
+          </h3>
+        </b>
+        Facultad de Ciencias Exactas y Naturales, Departamento de Física
+
+
+      </td>
+
+      <td width="30%">
+        <a href="http://sired.udenar.edu.co/id/eprint/7467">
+          <img src="{% static 'bs532/img/fislab1.png' %}" style="width: 100%;transform: scale(1)" alt="My image">
+        </a>
+      </td>
+    </tr>
+  </table>
+
+
+  <hr style="border: 1px solid; color: brgb(91,91,91); ">
+
+  <br>
+  <b style="color: rgb(0, 0, 0);">
+    Escriba correctamente los resultados, sustente su procedimiento experimental.
+  </b>
+
+  </br>
+  </br>
+  </br>
+
+  {% if sifile %}
+  <h4 style="color: red;"> ¡Lo sentimos, usted ya realizo este informe!</h4>
+  {% else %}
+  <!-- Formulario simple que enviará una petición POST  -->
+  <b>
+    <li>
+      Datos personales
+    </li>
+  </b>
+  </br>
+
+  <table>
+    <tr>
+      <td>
+
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" border="0"
+    style="font-size:18px; background-color: rgba(147, 132, 132, 0.1);border-radius: 15px;">
+    <tr>
+      <td width="2%"></td>
+      <td>
+        </p>
+
+        <form enctype="multipart/form-data" action="" method="post">
+
+          {% csrf_token %}
+
+          <div class="row">
+
+            <div class="form-group col-md-6 mb-0">
+              {{ form.nombre|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-3 mb-0">
+              {{ form.programa|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-2 mb-0">
+              {{ form.calendario|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-1 mb-0">
+              {{ form.grupo|as_crispy_field }}
+            </div>
+          </div>
+          </p>
+      </td>
+      <td width="2%"></td>
+    </tr>
+  </table>
+  </br>
+  </br>
+  <b>
+    <li>
+      Sustentación del procedimiento experimental
+    </li>
+  </b>
+
+  </br>
+  <table width="100%" border="0" style="background-color: rgba(147, 132, 132, 0.1);border-radius: 15px;">
+    <tr>
+      <td width="2%"></td>
+      <td>
+        <p>
+          {{form.metodologia|as_crispy_field }}
+        </p>
+      </td>
+      <td width="2%"></td>
+    </tr>
+  </table>
+
+
+  </br>
+  </br>
+
+  <b>
+    <li>
+      Resultados
+    </li>
+  </b>
+  </br>
+
+  <table width="100%" border="0" style="background-color: rgba(147, 132, 132, 0.1);border-radius: 15px;">
+    <tr>
+      <td width="2%"></td>
+      <td>
+        <p>
+          {{ form.resultados|as_crispy_field }}
+        </p>
+      </td>
+      <td width="2%"></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+
+  <!-- Formulario simple que enviará una petición POST   -->
+
+  <table width="100%" border="0" style="background-color: rgba(147, 132, 132, 0.1); border-radius: 15px;">
+    <tr>
+      <td width="2%"></td>
+
+      <td>
+        </p>
+        <b style="font-size:18px" ;>
+          Valor teórico medido en el laboratorio
+        </b>
+
+        </br>
+        </br>
+
+        <table style="font-size:18px" border="0" width="100%">
+
+          <tr>
+            <td width="30%">
+              Longitud del resorte sin estirar $L'_{0}=$
+            </td>
+            <td>
+
+              {{ form.mensurando_teo|as_crispy_field }}
+
+            </td>
+
+            <td>
+              $\pm$
+            </td>
+
+            <td>
+
+              {{ form.error_teo|as_crispy_field }}
+
+            </td>
+            <td width="1%"></td>
+            <td>
+              cm
+            </td>
+          </tr>
+
+        </table>
+
+        </br>
+      <td width="1%">
+
+      </td>
+      </td>
+    </tr>
+  </table>
+
+  </br>
+  </br>
+
+  <table width="100%" border="0"
+    style="font-size:18px; background-color: rgba(147, 132, 132, 0.1);border-radius: 15px;">
+
+    <tr>
+
+      <td width="2%"></td>
+
+      <td width="55%">
+        </br>
+        <table border="0">
+          <tr>
+            <td style="font-size:18px">
+              {{ form.descripcion_grafica|as_crispy_field }}
+
+              <img src="{% static 'img/fisilab1/ajuste_de_curvas/' %}{{nombre_grafica_jpg}}"
+                style="width: 100%;transform: scale(1)" alt="My image">
+
+            </td>
+          </tr>
+        </table>
+        <br>
+      </td>
+
+
+      <td width="2%"></td>
+
+
+      <td width="39%">
+        <p style="text-align: justify ">
+          {{ form.descripcion_tabla|as_crispy_field }}
+        </p>
+
+
+        <b>Tabla 1:</b>
+        Datos experimentales
+        <hr width=100%>
+
+
+        <table border="0" style="border-color: rgb(209, 209, 214);">
+          <tr>
+
+            <td width="25%" style="font-size:22px; font-family:'Times New Roman', Times, serif;">
+              $x$
+              </p>
+              <ul>
+
+                {% for xi in matriz_datos_post.x %}
+
+                <li>
+                  {{xi}}
+
+                </li>
+
+                {% endfor %}
+
+              </ul>
+
+            </td>
+
+            <td width="25%" style="font-size:22px; font-family:'Times New Roman', Times, serif;">
+              $y$
+              </p>
+              <ul>
+
+                {% for yi in matriz_datos_post.y %}
+
+                <li>
+                  {{yi}}
+
+                </li>
+
+                {% endfor %}
+
+              </ul>
+
+
+            </td>
+
+            <td width="25%" style="font-size:22px; font-family:'Times New Roman', Times, serif;">
+              $\Delta x$
+              </p>
+              <ul>
+                {% for i in matriz_datos_post.dx %}
+
+                <li>
+                  {{i}}
+
+                </li>
+
+                {% endfor %}
+
+              </ul>
+
+            </td>
+
+            <td width="5%" style="font-size:22px; font-family:'Times New Roman', Times, serif;">
+              $\Delta y$
+              </p>
+              <ul>
+                {% for i in matriz_datos_post.dy %}
+
+                <li>
+                  {{i}}
+
+                </li>
+
+                {% endfor %}
+
+              </ul>
+
+            </td>
+          </tr>
+        </table>
+
+
+      </td>
+
+      <td width="4%">
+
+      </td>
+
+    </tr>
+  </table>
+
+
+
+  </br>
+  </br>
+
+  <table width="100%" border="0" style="background-color: rgba(147, 132, 132, 0.1); border-radius: 15px;">
+    <tr>
+      <td width="2%"></td>
+      <td>
+        </p>
+        <b style="font-size:18px" ;>
+          Ajuste de datos a una línea recta (Sección 2.4.1)
+        </b>
+
+        </br>
+        </br>
+
+        <table style="font-size:18px" border="0" width="100%">
+
+          <tr>
+            <td width="30%">
+              Longitud del resorte sin estirar $L'_{0}=$
+            </td>
+            <td>
+
+              {{ form.mensurando_1|as_crispy_field }}
+
+            </td>
+
+            <td>
+              $\pm$
+            </td>
+
+            <td>
+
+              {{ form.error_1|as_crispy_field }}
+
+            </td>
+            <td width="1%"></td>
+            <td>
+              cm
+            </td>
+          </tr>
+
+        </table>
+
+        </br>
+
+        <table style="font-size:18px;" border="0" width="100%">
+          <tr>
+            <td width="29%">
+              Constante elástica del resorte $k'=$
+            </td>
+            <td>
+
+              {{ form.mensurando_2|as_crispy_field }}
+
+            </td>
+
+            <td>
+              $\pm$
+            </td>
+
+            <td>
+
+              {{ form.error_2|as_crispy_field }}
+
+            </td>
+            <td width="1%"></td>
+            <td>
+              ${\frac{dina}{cm}}$
+            </td>
+
+          </tr>
+        </table>
+
+        </br>
+
+        <table style="font-size:18px;" border="0">
+          <tr>
+            <td>
+              $\chi^2/\nu=$
+            </td>
+            <td>
+              {{ form.chicuadrado_1|as_crispy_field }}
+            </td>
+
+          </tr>
+        </table>
+
+        </br>
+        </br>
+
+      <td width="2%">
+
+      </td>
+      </td>
+    </tr>
+  </table>
+
+
+  </br>
+  </br>
+
+  <b>
+    <li>
+      Conclusiones
+    </li>
+  </b>
+  </br>
+  <table width="100%" border="0" style="background-color: rgba(147, 132, 132, 0.1);border-radius: 15px;">
+    <tr>
+      <td width="2%"></td>
+      <td>
+        <p>
+          {{form.conclusiones|as_crispy_field }}
+        </p>
+      </td>
+      <td width="2%"></td>
+    </tr>
+  </table>
+
+  </br>
+  </br>
+
+  <!--b>
+    <li>
+      Carge una foto del grupo con nombres completos en un archivo pdf, peso maximo 100 Kbits:
+    </li>
+  </b>
+  </br-->
+
+  <!--  {{form.soporte}} -->
+
+
+
+  <button class="btn btn-sm btn-primary float-end" type="submit">Guardar y continuar</button>
+
+  </form>
+
+  </br>
+
+  {% endif %}
+
+</div>
+
+{% endblock content %}
+
+
+<!--- <label for="name">Nombre:</label!>
+  <input type="text" placeholder="escribe aqui" maxlength="5" name="el_dato_enviado"/ id="name">
+--->

@@ -1,0 +1,402 @@
+<html>
+
+<head>
+
+  {% load static %}
+
+
+
+  <!-- Bootstrap -->
+  <link href="{% static 'bs532/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="{% static 'bs532/css/gestion.css' %}" rel="stylesheet" />
+
+  <!---   inicio codigo para formulario laboratorio  --->
+
+  <style>
+    ul {
+      list-style: none;
+      border: 0px solid rgb(73, 16, 215);
+      padding: 0;
+      margin: 0;
+    }
+
+    li ul {
+      left: 330px;
+      border: rgb(205, 205, 205) 1px solid;
+      position: absolute;
+      background: rgb(225, 225, 225);
+      display: block;
+      width: 190px;
+      top: 40px;
+    }
+
+    nav>ul>li ul {
+      display: none;
+    }
+
+    nav>ul>li li:hover {
+      background-color: rgb(23, 92, 230, 0.1);
+
+    }
+
+    nav>ul>li a {
+      color: rgba(8, 26, 66);
+      font-family: arial;
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-decoration: none;
+      position: relative;
+      vertical-align: middle;
+
+    }
+
+    table,
+    th,
+    td {
+      border: 0px solid black;
+      border-collapse: collapse;
+    }
+
+    nav>ul>li a:hover {
+      color: rgb(23, 92, 230, 0.8);
+      cursor: pointer;
+    }
+
+    nav>ul>li a.active {
+      color: rgb(23, 92, 230, 0.8);
+    }
+
+    nav>ul>li:hover ul {
+      display: block;
+    }
+
+    .class_login {
+      border: silver 1px solid;
+      margin: 10px;
+      padding: 30px;
+      margin-left: 470px;
+      margin-right: 470px;
+      background-color: #efecec;
+      font-family: 'arial';
+
+    }
+
+    .class_registro {
+      border: silver 1px solid;
+      margin: 10px;
+      padding: 30px;
+      margin-left: 230px;
+      margin-right: 230px;
+      background-color: #F3F3F3;
+      font-family: 'arial';
+
+    }
+
+    .class_div {
+      border: silver 1px solid;
+      margin: 10px;
+      padding: 30px;
+      margin-left: 120px;
+      margin-right: 120px;
+      background-color: #F3F3F3;
+      font-family: 'arial';
+    }
+
+    .asteriskField {
+      display: none;
+    }
+
+
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    /* Esto aqui es para quitar las flechitas que ponen numeros
+    hacia arriba y hacia abajo */
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* For Firefox  */
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    /* ---------.......-------*/
+  </style>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!---   fin codigo para formulario laboratorio  --->
+
+  {% block content_head %}
+
+  {% endblock %}
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark py-lg-0" id="miniNav"
+    style="border: rgba(26, 58, 100, 0.9) 1px solid;">
+
+    <table width="100%">
+
+      <tr>
+        <td width="70%">
+          </d>
+        <td width="2%">
+          <a href='https://www.linkedin.com/in/amcern'>
+            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/linkedin.png' %}" alt>
+
+            <a>
+              </d>
+        <td width="2%">
+          <a href="https://www.instagram.com/_alejandro_molina_/">
+            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/instagram.png' %}" alt>
+
+            <a>
+              </d>
+        <td width="2%">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">
+            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/facebook.png' %}" alt>
+
+            <a>
+              </d>
+
+        <td width="2%">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">
+            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/lupa.png' %}" alt>
+            <a>
+        </td>
+
+        {% if user.is_authenticated %}
+
+        <td td width="7%">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-0">
+              <a class="nav-link text-uppercase text-expanded">
+                Hola {{ user.username }}
+              </a>
+            </li>
+          </ul>
+        </td>
+
+        <td width="7%">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item {% if request.path == '/autenticacion/' %}active{% endif %} px-lg-0">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'cerrar_sesion' %}">Cerrar sesion</a>
+            </li>
+          </ul>
+        </td>
+
+
+        <td width="5%">
+        </td>
+
+
+        {% else %}
+
+        <td width="4%">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item {% if request.path == '/autenticacion/' %}active{% endif %} px-lg-0">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'logear' %}">Ingresar</a>
+            </li>
+          </ul>
+        </td>
+        <td width="10%">
+
+
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item {% if request.path == '/autenticacion/' %}active{% endif %} px-lg-0">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'autenticacion' %}">Registro</a>
+            </li>
+          </ul>
+        </td>
+        {% endif %}
+      </tr>
+    </table>
+
+  </nav>
+
+  <div class="row" id="xminibar">
+    &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+    <div class="form-group col-md-4 mb-0">
+      <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">
+        <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/PhysiCode_left.png' %}" alt>
+      </a>
+    </div>
+    <div class="form-group col-md-3 mb-0">
+
+    </div>
+
+    <div class="form-group col-md-4 mb-0">
+      <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">
+        <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/PhysiCode_right.png' %}" alt>
+      </a>
+    </div>
+
+  </div>
+
+  <nav class=" navbar sticky-top navbar-expand-lg navbar-dark py-lg-0" id="mainNav"
+    style="border: rgb(205, 205, 205) 1px solid;">
+
+    <ul class="navbar-nav mx-auto">
+
+      <li class="px-lg-4 py-lg-2">
+        <a class="text-uppercase text-expanded dropdown-toggle 
+                  
+                  {% if request.path == '/' %} active  
+                  {% elif request.path == '/' %} active  
+                  {% endif %}
+                  
+                  " href="#">Home</a>
+      </li>
+
+
+      <li class="px-lg-4 py-lg-2">
+
+        <a class="text-uppercase text-expanded dropdown-toggle 
+        
+        {% if request.path == '/fisicalab1/' %} active  
+        {% elif request.path == '/fisicalab2/' %} active  
+        {% endif %}
+        
+        " href="#">mis cursos</a>
+
+
+        <ul class="py-lg-2">
+
+          <li class="nav-item {% if request.path == '/fisicalab1/' %}  active  {% endif %} ">
+            <center>
+              <a class=" nav-link text-uppercase text-expanded" href="{% url 'fisilab1' %}"
+                style="font-size:12px;">laboratorio física 1</a>
+            </center>
+          </li>
+
+          <li class="nav-item {% if request.path == '/fisicalab2/' %}  active  {% endif %}">
+            <center>
+              <a class=" nav-link text-uppercase text-expanded" href="{% url 'fisilab2' %}"
+                style="font-size:12px;">laboratorio física 2</a>
+            </center>
+          </li>
+        </ul>
+
+
+      </li>
+
+      <li class="px-lg-4 py-lg-2">
+        <a class="text-uppercase text-expanded dropdown-toggle 
+                  
+                  {% if request.path == '/' %} active  
+                  {% elif request.path == '/' %} active  
+                  {% endif %}
+                  
+                  " href="#">Portafolio</a>
+      </li>
+
+      <li class="px-lg-4 py-lg-2">
+        <a class="text-uppercase text-expanded dropdown-toggle 
+                  
+                  {% if request.path == '/' %} active  
+                  {% elif request.path == '/' %} active  
+                  {% endif %}
+                  
+                  " href="#">Curriculum</a>
+      </li>
+
+      <li class="px-lg-4 py-lg-2">
+        <a class="text-uppercase text-expanded dropdown-toggle 
+                  
+                  {% if request.path == '/' %} active  
+                  {% elif request.path == '/' %} active  
+                  {% endif %}
+                  
+                  " href="#">Contacto</a>
+      </li>
+
+      <li class="px-lg-4 py-lg-2">
+        <a class="text-uppercase text-expanded dropdown-toggle 
+                  
+                  {% if request.path == '/' %} active  
+                  {% elif request.path == '/' %} active  
+                  {% endif %}
+                  
+                  " href="#">Blog</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- Contenido cambiante-->
+  {% block content %}
+
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="footer text-faded text-center py-5">
+    <div class="container">
+      <p class="m-0">
+        <a href="#" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        <a href="#" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        <a href="#" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </p>
+      <p class="m-0 mbt">
+        <a href="sample.html" class="link">Política de
+          privacidad</a> ·
+        <a href="sample.html" class="link">Aviso legal</a> ·
+        <a href="sample.html" class="link">Cookies</a>
+      </p>
+      <p class="m-0 mbt1">&copy; PhysiMathCode 2024</p>
+    </div>
+  </footer>
+
+
+
+  <script src="{% static 'bs532/js/bootstrap.bundle.min.js'%}"></script>
+</body>
+
+</html>
+
+<!-- Navigation Menu -->

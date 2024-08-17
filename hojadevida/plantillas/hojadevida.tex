@@ -1,0 +1,67 @@
+% Qué tipo de documento estamos por comenzar:
+\documentclass[12pt, a4paper]{article}
+% Esto es para que el LaTeX sepa que el texto está en español:
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+% Esto es para poder escribir acentos directamente:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+%% Asigna un tamaño a la hoja y los márgenes
+\usepackage[a4paper,top=1cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+
+%% Paquetes de la AMS
+\usepackage{amsmath, amsthm, amsfonts}
+%% Para añadir archivos con extensión pdf, jpg, png or tif
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\setlength{\parindent}{0cm} 
+
+{% graphicspath %}
+
+\title{\vspace{0cm} \fontsize{14}{14}\selectfont 
+\textbf{LABORATORIO 1: }
+\textbf{AJUSTE DE CURVAS}\\
+\vspace{2mm}
+\textbf{ {{- Programa -}}. }
+\textbf{Grupo: }{{- grupo -}}
+}
+
+\author{
+{\bf Integrantes:}
+\vspace{2mm}\\  
+{% for nom in nombres %}
+{{- nom -}}\\
+{% endfor %}
+\\
+\text{Fecha: } {{- calendario -}}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+%
+\vspace{2mm}
+\section{Metodología}
+{{- metodologia -}}
+
+\section{Resultados}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.56\textwidth]{ {{- grafplot -}} }
+% \caption{Manometro difrencial}
+% \label{fig_2}
+\end{figure}
+
+\section{Conclusiones}
+{{- conclusiones -}}
+
+\section{Referencias}
+
+\end{document}
+

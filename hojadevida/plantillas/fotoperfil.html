@@ -1,0 +1,40 @@
+<!-- {% load static %}
+{% load crispy_forms_tags %}
+{% block content%} -->
+<link href="{% static 'bs532/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'bs532/css/misopcionescss.css' %}" rel="stylesheet" />
+<!-- Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+<link href="{% static 'bs532/css/gestion.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'bs532/input-file/fancy-file/styles_img.css' %}" />
+
+
+
+<table style="width:4cm; border-top: 1px rgba(13, 88, 250, 0) solid ;">
+    <tr>
+        <td style="width: 98%;" id="ubicar_foto_perfil">
+            <form enctype="multipart/form-data" id="guardar_foto_usuario" method="post">
+                <input type="file" name="foto_perfil" accept="image/*" class="upload-img green" required
+                    id="id_foto_perfil">
+            </form>
+        </td>
+        <td id="ubicar_icono_eliminar">
+            <button onclick="guardarFotoPerfil()" class="btn btn-light btn-sm"
+                style=" position: relative; width: 3px; height: 20px; margin-bottom: 170px">
+                <img src="http://localhost:8000/static/bs532/img/save.svg"
+                    style=" position: relative; margin-left: -8px; margin-top:-3px;">
+            </button>
+        </td>
+    </tr>
+
+</table>
+
+
+<!-- <script src="{% static 'bs532/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'bs532/input-file/fancy-file/script.js' %}"></script>
+<script src=" https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js "></script> -->
+
+<!-- {% endblock content %} -->

@@ -1,0 +1,300 @@
+{% extends "basehv.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+<div class=" class_div_div">
+  <div class="class_div" style="font-size:15px;border-top: rgb(8, 26, 66) 5px solid; border-radius: 10px;">
+
+
+    <table>
+      <tr>
+        <td>
+          <b>
+            <h3>
+              LAB. 2: Adquisición de los datos experimentales
+            </h3>
+          </b>
+          <h5>
+            Universidad de Nariño, Depto. de fisica. Ajuste de Curvas
+          </h5>
+          </b>
+
+
+
+        </td>
+
+        <td width="30%">
+          <a href="http://sired.udenar.edu.co/id/eprint/7467">
+            <img src="{% static 'bs532/img/fislab1.png' %}" style="width: 100%;transform: scale(1)" alt="My image">
+          </a>
+        </td>
+      </tr>
+    </table>
+
+    <hr style="border: 1px solid; color: brgb(91,91,91); ">
+
+    <br>
+    <b style="color: rgb(0, 0, 0);">
+      Para poder avanzar con la elaboración del informe, es necesario completar todos los campos de la tabla
+      ( Todos los campos de la tabla son obligatorios ).
+    </b>
+
+    </br>
+    </br>
+
+    <!-- Formulario simple que enviará una petición POST   -->
+
+
+    <b style="font-size:18px" ;>
+      <li>
+        Tabla de datos experimentales
+      </li>
+
+    </b>
+
+    <hr>
+
+    </br>
+
+    <table>
+      <tr>
+        <td>
+
+        </td>
+      </tr>
+    </table>
+
+    {% if sifile %}
+
+    <h4 style="color: red;"> ¡Lo sentimos, usted ya realizo este informe!</h4>
+
+
+    {% else %}
+
+
+
+    <form action="" method="post">
+      {% csrf_token %}
+      <table width="100%" border="0"
+        style="border-color: rgb(221, 221, 221);background-color: rgba(147, 132, 132, 0.1); border-radius: 15px;">
+
+        <tr>
+
+          <td width="2%">
+          </td>
+
+          <td>
+            <table width="100%" border="0">
+
+              </p>
+              <tr>
+
+                <td>
+                  $x(cm)$
+                </td>
+
+                <td>
+                  {{datosform.x1|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.x2|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.x3|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.x4|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.x5|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.x6|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.x7|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.x8|as_crispy_field}}
+                </td>
+
+              </tr>
+
+              <tr style="background-color: rgba(255, 255, 255, 0)">
+                <td>
+                  $\Delta x(cm)$
+                </td>
+                <td>
+                  {{datosform.dx1|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dx2|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dx3|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dx4|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dx5|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dx6|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dx7|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dx8|as_crispy_field}}
+                </td>
+              <tr>
+                <td>
+                  $y(cm)$
+                </td>
+                <td>
+                  {{datosform.y1|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.y2|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.y3|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.y4|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.y5|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.y6|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.y7|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.y8|as_crispy_field}}
+                </td>
+
+              </tr>
+
+              <tr style="background-color: rgba(255, 255, 255, 0)">
+                <td>
+                  $\Delta y(cm)$
+                </td>
+                <td>
+                  {{datosform.dy1|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dy2|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dy3|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dy4|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dy5|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dy6|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dy7|as_crispy_field}}
+                </td>
+                <td>
+                  {{datosform.dy8|as_crispy_field}}
+                </td>
+
+              </tr>
+
+            </table>
+
+          <td width="2%"></td>
+
+          </td>
+
+        </tr>
+
+      </table>
+
+      </br>
+
+
+
+      <!--################# Datos adisionales ##################-->
+
+      <br>
+
+      <b>
+        <li>
+          Datos para el gráfico ( Los campos marcados con * son obligatorios)
+        </li>
+
+      </b>
+
+      <hr>
+
+      <br>
+
+      <div class="row">
+
+        <div class="form-group col-md-8 mb-0">
+          {{ datosform.titulo_grafico|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-4 mb-0">
+          {{ datosform.nombre_grafico|as_crispy_field }}
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="form-group col-md-4 mb-0">
+          {{ datosform.eje_x|as_crispy_field }}
+        </div>
+
+        <div class="form-group col-md-4 mb-0">
+          {{ datosform.eje_y|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-2 mb-0">
+          {{ datosform.pendiente|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-2 mb-0">
+          {{ datosform.intercepto|as_crispy_field }}
+        </div>
+
+
+      </div>
+
+
+
+      <!--################# Datos adisionales ##################-->
+
+      <br>
+      <button class="btn btn-sm btn-primary float-end" type="submit">
+        Enviar datos y continuar
+      </button>
+
+    </form>
+    {% endif %}
+    </p>
+  </div>
+  <br>
+</div>
+
+
+
+
+
+{% endblock content %}
+
+
+<!--- <label for="name">Nombre:</label!>
+  <input type="text" placeholder="escribe aqui" maxlength="5" name="el_dato_enviado"/ id="name">
+--->

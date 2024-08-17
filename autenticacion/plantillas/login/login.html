@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class="class_login">
+
+    <form action=" " method="post">
+
+        {% csrf_token %}
+
+        <div style="width: 20rem;">
+
+
+            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/PhysiCode_left.png' %}" alt="">
+            </p>
+            <h5>Complete todos los campos</h5>
+            </p>
+
+            {{form|crispy}}
+
+
+            <table>
+                <tr>
+                    <td width="5%">
+                    </td>
+                    <td width="5%">
+                        <a href="{% url 'autenticacion' %}"
+                            class="btn btn-sm btn-outline-primary float-end">REGISTRO</a>
+                    </td>
+
+                    <td width="5%">
+                        <button class="btn btn-sm btn-outline-danger float-end" type="submit">ENTRAR</button>
+                    </td>
+                    <td width="10%">
+                    </td>
+
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</div>
+
+{% endblock %}

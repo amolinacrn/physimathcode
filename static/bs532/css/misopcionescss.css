@@ -1,0 +1,272 @@
+.my_img {
+  width: 3.5cm;
+  height: 4.5cm;
+  border-radius: 5%;
+  border: 5px solid rgb(255, 255, 255);
+}
+
+.my_img_html {
+  width: 3.5cm;
+  height: 4.5cm;
+  border-radius: 1px;
+  border: 3px solid rgb(255, 255, 255);
+}
+
+/* input[type="file"] {
+        width: 200px;
+        padding: 10px;
+        border-radius: 5%;
+        background-image: url("../../static/bs532/img/documento.svg");
+        color: #333;
+        border: 1px solid #ccc;
+
+
+        } */
+/* ul {
+                    list-style: none;
+                    border: 0px solid rgb(73, 16, 215);
+                    padding: 0;
+                    margin: 0;
+                } */
+
+/* li ul {
+                    border: rgb(205, 205, 205) 1px solid;
+                    position: absolute;
+                    background: rgb(225, 225, 225);
+                    display: block;
+                    width: 190px;
+                    top: 40px;
+                } */
+
+nav > ul > li ul {
+  display: none;
+}
+
+nav > ul > li li:hover {
+  background-color: rgb(23, 92, 230, 0.1);
+}
+
+nav > ul > li a {
+  color: rgba(8, 26, 66);
+  font-family: arial;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-decoration: none;
+  position: relative;
+  vertical-align: middle;
+}
+
+.formato_div_carga {
+  margin: 0px;
+  padding: 5px;
+  background-color: white;
+  position: absolute;
+  margin-top: -52px;
+  margin-left: 4.5cm;
+  color: rgb(0, 0, 0);
+  width: 31%;
+  border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ptable,
+.ptd {
+  border: 1px solid rgb(255, 255, 255);
+  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0.5px;
+}
+
+.ptd {
+  margin: 0px;
+  padding: 10px;
+}
+
+.ptbody {
+  background: white;
+}
+
+.askdj {
+  background-color: #dddddd;
+}
+
+.ptr {
+  background-color: rgb(148, 148, 148);
+}
+
+table,
+tr,
+td {
+  border: 0px solid black;
+  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0.5px;
+  margin-left: -0.5px;
+}
+
+nav > ul > li a:hover {
+  color: #175ce6cc;
+  cursor: pointer;
+}
+
+nav > ul > li a.active {
+  color: rgb(23, 92, 230, 0.8);
+}
+
+nav > ul > li:hover ul {
+  display: block;
+}
+
+/* button:hover {
+      -webkit-transform: scale(1.5);
+      -moz-transform: scale(1.5);
+      -o-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      transform: scale(1.05);
+      transition: all .3s ease-in;
+    } */
+
+img:hover {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.2);
+  /*transition: all .0s ease-in;*/
+}
+
+.clsimg:hover {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.03);
+  /*transition: all .0s ease-in;*/
+}
+
+.botonexper:hover {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.06);
+  /*transition: all .0s ease-in;*/
+}
+
+.clsimage:hover {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.1);
+  /*transition: all .0s ease-in;*/
+}
+
+.class_login {
+  border: silver 1px solid;
+  margin: 10px;
+  padding: 30px;
+  margin-left: 470px;
+  margin-right: 470px;
+  background-color: #efecec;
+  font-family: "arial";
+}
+
+.class_registro {
+  border: silver 1px solid;
+  margin: 10px;
+  padding: 30px;
+  margin-left: 230px;
+  margin-right: 230px;
+  background-color: #f3f3f3;
+  font-family: "arial";
+}
+
+.class_hv {
+  border: silver 1px solid;
+  margin: 10px;
+  padding: 30px;
+  margin-left: 120px;
+  margin-right: 120px;
+  background-color: #f3f3f3;
+  font-family: "arial";
+}
+
+.class_hv_portada {
+  border: silver 1px solid;
+  margin: 10px;
+  padding: 30px;
+  margin-left: 210px;
+  margin-right: 210px;
+  background-color: #f3f3f3;
+  font-family: "arial";
+}
+
+.class_div {
+  border: silver 1px solid;
+  margin: 0px;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #f3f3f3;
+  font-family: "arial";
+}
+
+.div_class_foto {
+  position: absolute;
+  border: rgba(192, 192, 192, 0) 1px solid;
+  padding: 0px;
+  margin-left: 63px;
+  margin-right: 0px;
+  background-color: #bf0f0f00;
+  font-family: "arial";
+  margin-top: 97px;
+  width: 3.85cm;
+}
+
+.div_guardar_foto {
+  width: 3.5cm;
+  margin: 0px;
+}
+
+.class_div_class {
+  border: silver 0px solid;
+  margin: 0px;
+  padding: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #bcbbbb;
+  font-family: "arial";
+}
+
+.class_div_div {
+  border: silver 0px solid;
+  margin: 0px;
+  padding: 10px;
+  margin-left: 120px;
+  margin-right: 120px;
+  background-color: #bcbbbb;
+  font-family: "arial";
+}
+
+.asteriskField {
+  display: none;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Esto aqui es para quitar las flechitas que ponen numeros
+    hacia arriba y hacia abajo */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox  */
+
+/* ---------.......-------*/

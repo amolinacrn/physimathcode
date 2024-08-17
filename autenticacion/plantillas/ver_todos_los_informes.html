@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block content %}
+
+<style>
+    .headt td {
+        min-width: 235px;
+        height: 40px;
+
+    }
+</style>
+
+<div class="container" id="mainDiv">
+    <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item px-lg-4">
+            <p></p>
+            <table class="headt" width="100%">
+                <tr>
+
+                    <td>
+
+                        Informe 2: Ajuste de Curvas
+                    </td>
+
+                    <td>
+                        {% if true %}
+                        <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-sm btn-outline-success">Ver archivo pdf</button>
+                            <!--img src="{% static 'bs532/img/pdficon.png' %}" style="width: 5.5%;" alt="My image"-->
+                        </a>
+                        &nbsp &nbsp
+                        <a class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                            href="{% url 'delete_file' %}">
+                            <button type="button" class="btn btn-sm btn-outline-Danger">Eliminar archivo pdf</button>
+                            <!--img src="{% static 'bs532/img/pdficon.png' %}" style="width: 5.5%;" alt="My image"-->
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen ">
+                                <div class="modal-content">
+
+                                    <div class="modal-body px-lg-1 py-lg-1">
+
+                                        <embed src="{% static 'files/ajuste_de_curvas/' %}{{filename}}"
+                                            type="application/pdf" width="100%" height="94.7%" />
+
+                                        <div class="modal-footer py-lg-0">
+                                            <button type="button" class="btn btn-light btn-sm" width="10%">
+                                                <img src="{% static 'bs532/img/cerrar.png' %}" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            {% endif %}
+                    </td>
+
+
+
+
+
+                </tr>
+
+
+                <tr style="background-color: #fffefe00">
+
+                    <td width="27%">
+
+                        Informe 2: Ajuste de Curvas
+                    </td>
+
+                    <td>
+                        {% if true %}
+                        <a class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+                            <img src="{% static 'bs532/img/pdficon.png' %}" style="width: 5.5%;" alt="My image">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen ">
+                                <div class="modal-content">
+
+                                    <div class="modal-body px-lg-1 py-lg-1">
+
+                                        <embed src="{% static 'files/ajuste_de_curvas/' %}{{filename}}"
+                                            type="application/pdf" width="100%" height="94.7%" />
+
+                                        <div class="modal-footer py-lg-0">
+                                            <button type="button" class="btn btn-light btn-sm" width="10%">
+                                                <img src="{% static 'bs532/img/cerrar.png' %}" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endif %}
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td width="27%">
+
+                        Informe 2: Ajuste de Curvas
+                    </td>
+
+                    <td>
+                        {% if true %}
+                        <a class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+                            <img src="{% static 'bs532/img/pdficon.png' %}" style="width: 5.5%;" alt="My image">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen ">
+                                <div class="modal-content">
+
+                                    <div class="modal-body px-lg-1 py-lg-1">
+
+                                        <embed src="{% static 'files/ajuste_de_curvas/' %}{{filename}}"
+                                            type="application/pdf" width="100%" height="94.7%" />
+
+                                        <div class="modal-footer py-lg-0">
+                                            <button type="button" class="btn btn-light btn-sm" width="10%">
+                                                <img src="{% static 'bs532/img/cerrar.png' %}" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endif %}
+                    </td>
+                </tr>
+
+
+                <tr style="background-color: #fffefe00">
+
+                    <td width="27%">
+
+                        Informe 2: Ajuste de Curvas
+                    </td>
+
+                    <td>
+                        {% if true %}
+                        <a class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+                            <img src="{% static 'bs532/img/pdficon.png' %}" style="width: 5.5%;" alt="My image">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen ">
+                                <div class="modal-content">
+
+                                    <div class="modal-body px-lg-1 py-lg-1">
+
+                                        <embed src="{% static 'files/ajuste_de_curvas/' %}{{filename}}"
+                                            type="application/pdf" width="100%" height="94.7%" />
+
+                                        <div class="modal-footer py-lg-0">
+                                            <button type="button" class="btn btn-light btn-sm" width="10%">
+                                                <img src="{% static 'bs532/img/cerrar.png' %}" data-bs-dismiss="modal">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endif %}
+                    </td>
+                </tr>
+
+            </table>
+            <p></p>
+
+    </ul>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,107 @@
+% Qué tipo de documento estamos por comenzar:
+\documentclass[11pt, a4paper]{article}
+% Esto es para que el LaTeX sepa que el texto está en español:
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+% Esto es para poder escribir acentos directamente:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\addto\captionsspanish{\renewcommand{\figurename}{Figura}}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+%% Asigna un tamaño a la hoja y los márgenes
+\usepackage[a4paper,top=1cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+
+
+%% Paquetes de la AMS
+\usepackage{amsmath, amsthm, amsfonts}
+%% Para añadir archivos con extensión pdf, jpg, png or tif
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\setlength{\parindent}{0cm} 
+
+{% graphicspath %}
+
+\title{\vspace{0cm}
+\textbf{LABORATORIO 1: }
+\textbf{AJUSTE DE CURVAS}\\
+\vspace{2mm}
+}
+
+\author{ 
+\begin{tabular}{l  l  l  l }\\
+{\bf Integrantes:}&{\bf Programa:}&{\bf Grupo:}&{\bf NPG:}\vspace{0.2cm}\\
+{% for nom in nombres %}
+{{- nom -}} & {{- Programa -}} & {{- grupo -}}& {{- nota -}}\\
+{% endfor %}
+\end{tabular}
+\vspace{1cm}\\
+
+\text{Fecha: } {{- calendario -}}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+%
+\vspace{2mm}
+\section{\uppercase{Metodología}}
+{{- metodologia -}}
+
+\section{\uppercase {Resultados}}
+{{- resultados -}}
+
+\begin{figure}[H]
+%\centering
+\begin{tabular}{p{8.795cm}p{8.795cm}}
+\begin{minipage}[l]{8.795cm}
+\includegraphics[width=8.795cm]{ {{- grafplot -}} }
+\caption{ {{- descripcion_grafica -}} }
+\label{fig1}
+\end{minipage}
+&
+\begin{minipage}[r]{7.45cm}
+\begin{table}[H]
+\begin{center}
+\caption{ {{- descripcion_tabla -}} }
+\vspace{0.5cm}
+\label{tabla1}
+\begin{tabular}{l l l l}
+\hline
+\vspace{0.001cm}
+{{- name_ejes[0] -}}
+&
+{{- name_ejes[1] -}}
+&
+$\Delta${{- name_ejes[0] -}}
+&
+$\Delta${{- name_ejes[1] -}}\\
+\hline
+{% for i in contr %}
+{{- mxdat[i,0] -}} &
+{{- mxdat[i,1] -}} &
+{{- mxdat[i,2] -}} &
+{{- mxdat[i,3] -}}\\
+{% endfor %}
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\end{minipage}
+\end{tabular}
+\end{figure}
+
+
+\section{\uppercase {Conclusiones}}
+{{- conclusiones -}}
+
+\section{\uppercase {Referencias}}
+
+\end{document}
+

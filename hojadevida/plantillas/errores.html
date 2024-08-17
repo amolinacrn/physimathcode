@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content%}
+
+<div class="class_registro">
+  <div style="width: 50rem;">
+    {% for o in form %}
+    <center>
+      <b style="font-size:30px;">
+        Lo sentimos!
+        <p>
+      </b>
+
+      <br>
+      <h5>
+        Error variable
+        <font color="red">{{o}} = ... </font>
+      </h5>
+      {% endfor %}
+    </center>
+    <a class="btn btn-sm btn-primary float-end" href="{% url 'ajuste_de_curvas' %} ">Regresar al informe</a>
+    </br>
+  </div>
+</div>
+
+{% endblock %}

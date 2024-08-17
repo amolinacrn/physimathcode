@@ -1,0 +1,48 @@
+.fancy-file {
+  display: none;
+  /* display: inline; */
+}
+.fancy-file + label {
+  display: flex;
+  flex: 1;
+}
+.fancy-file__fancy-file-name,
+.fancy-file__fancy-file-button {
+  padding: 5px 10px;
+}
+
+.fancy-file__fancy-file-name {
+  background: #ffffff;
+  border: 1px solid #cacaca;
+  flex: 1;
+  border-radius: 4px 0 0 4px;
+  width: 0px;
+}
+
+.fancy-file__fancy-file-name span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 0px;
+  display: block;
+  cursor: pointer;
+}
+
+.fancy-file__fancy-file-button {
+  background: #5bc0de url(./folder.png) 6px center/25px no-repeat;
+  border: 1px solid #5bc0de;
+  color: white;
+  white-space: nowrap;
+  border-radius: 0 4px 4px 0;
+  padding-left: 26px;
+  cursor: pointer;
+}
+
+.fancy-file.red + label > .fancy-file__fancy-file-button {
+  background-color: #d9534f;
+  border-color: #d64641;
+}
+.fancy-file.green + label > .fancy-file__fancy-file-button {
+  background-color: #5cb85c;
+  border-color: #4fb04f;
+}

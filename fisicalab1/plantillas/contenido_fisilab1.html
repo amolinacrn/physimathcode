@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block content %}
+
+<div class="container" id="mainDiv">
+  <ul class="navbar-nav mx-auto">
+
+    <li class="nav-item px-lg-4">
+
+      <table width="100%">
+        <tr>
+
+          <td width="23%">
+            {% if true %}
+            <a class="nav-link text-expanded text-expanded" href="#">
+              Informe 2: Ajuste de Curvas</a>
+            {% else %}
+            <a class="nav-link text-expanded text-expanded" href="{% url 'analisys' %}">
+              Informe 2: Ajuste de Curvas</a>
+            {% endif %}
+          </td>
+
+          <td>
+            {% if true %}
+            <a class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+              data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+              <img src="{% static 'bs532/img/pdficon.png' %}" style="width: 5.5%;" alt="My image">
+            </a>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-fullscreen ">
+                <div class="modal-content">
+
+                  <div class="modal-body px-lg-1 py-lg-1">
+
+                    <embed src="{% static 'files/ajuste_de_curvas/' %}{{filename}}" type="application/pdf" width="100%"
+                      height="94.7%" />
+
+                    <div class="modal-footer py-lg-0">
+                      <button type="button" class="btn btn-light btn-sm" width="10%">
+                        <img src="{% static 'bs532/img/cerrar.png' %}" data-bs-dismiss="modal">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {% endif %}
+          </td>
+        </tr>
+
+      </table>
+
+
+
+
+
+
+
+
+      <!---
+
+    <li class=" nav-item px-lg-4">
+                        <a class="nav-link text-expanded text-expanded" href="{% url 'Home' %}">
+                          Medida de Longitudes y Masas</a>
+    </li>
+
+    <li class="nav-item px-lg-4">
+      <a class="nav-link text-expanded text-expanded" href="{% url 'Home' %}">
+        Movimiento Rectilíneo Uniforme</a>
+    </li>
+
+    <li class="nav-item px-lg-4">
+      <a class="nav-link text-none text-expanded" href="{% url 'Home' %}">
+        Movimiento Rectilíneo Uniformemente Variado</a>
+    </li>
+    <li class="nav-item px-lg-4">
+      <a class="nav-link text-none text-expanded" href="{% url 'Home' %}">
+        Caída Libre</a>
+    </li>
+    <li class="nav-item px-lg-4">
+      <a class="nav-link text-none text-expanded" href="{% url 'Home' %}">
+        Movimiento Parabólico</a>
+    </li>
+    <li class="nav-item  px-lg-4">
+      <a class="nav-link text-none text-expanded" href="{% url 'Home' %}">
+        Movimiento Circular</a>
+    </li>
+    <li class="nav-item  px-lg-4">
+      <a class="nav-link text-none text-expanded" href="{% url 'Home' %}">
+        Segunda ley de Newton</a>
+    </li>
+    <li class="nav-item  px-lg-4">
+      <a class="nav-link text-none text-expanded" href="{% url 'Home' %}">
+        Fuerza de Rozamiento</a>
+    </li>
+    -->
+
+  </ul>
+
+</div>
+
+
+{% endblock %}

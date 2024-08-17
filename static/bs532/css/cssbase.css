@@ -1,0 +1,128 @@
+ul {
+  list-style: none;
+  border: 0px solid rgb(73, 16, 215);
+  padding: 0;
+  margin: 0;
+}
+
+li ul {
+  border: rgb(205, 205, 205) 1px solid;
+  position: absolute;
+  background: rgb(225, 225, 225);
+  display: block;
+  width: 190px;
+  top: 40px;
+}
+
+nav > ul > li ul {
+  display: none;
+}
+
+nav > ul > li li:hover {
+  background-color: rgb(23, 92, 230, 0.1);
+}
+
+nav > ul > li a {
+  color: rgba(8, 26, 66);
+  font-family: arial;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-decoration: none;
+  position: relative;
+  vertical-align: middle;
+}
+
+table,
+th,
+td {
+  border: 0px solid black;
+  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+nav > ul > li a:hover {
+  color: rgb(23, 92, 230, 0.8);
+  cursor: pointer;
+}
+
+nav > ul > li a.active {
+  color: rgb(23, 92, 230, 0.8);
+}
+
+nav > ul > li:hover ul {
+  display: block;
+}
+
+/* button:hover {
+      -webkit-transform: scale(1.5);
+      -moz-transform: scale(1.5);
+      -o-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      transform: scale(1.05);
+      transition: all .3s ease-in;
+    } */
+
+img:hover {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.05);
+  /*transition: all .0s ease-in;*/
+}
+
+.class_login {
+  border: silver 1px solid;
+  margin: 10px;
+  padding: 30px;
+  margin-left: 470px;
+  margin-right: 470px;
+  background-color: #efecec;
+  font-family: "arial";
+}
+
+.class_registro {
+  border: silver 1px solid;
+  margin: 10px;
+  padding: 30px;
+  margin-left: 230px;
+  margin-right: 230px;
+  background-color: #f3f3f3;
+  font-family: "arial";
+}
+
+.class_div {
+  border: silver 1px solid;
+  margin: 10px;
+  padding: 30px;
+  margin-left: 120px;
+  margin-right: 120px;
+  background-color: #f3f3f3;
+  font-family: "arial";
+}
+
+.asteriskField {
+  display: none;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Esto aqui es para quitar las flechitas que ponen numeros
+    hacia arriba y hacia abajo */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox  */
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ---------.......-------*/

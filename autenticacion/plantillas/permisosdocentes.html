@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="class_div" style="font-size:18px;" <form action="" method="post">
+    <form method="post">
+        {% csrf_token %}
+        <h3>Permitir a los usuarios visualizar todos los informes de ajustes de curvas</h3>
+        <hr>
+        <div class="row">
+
+            <div class="form-group col-md-3 mb-0">
+                {{form.id_usuario|as_crispy_field}}
+            </div>
+            <div class="form-group col-md-2 mb-0">
+                {{form.permiso_docente|as_crispy_field}}
+            </div>
+            {% if messages %}
+
+            {% for mensaje in messages %}
+
+            <span class="alert alert-{{mensaje.tags}}"> {{mensaje}} </span>
+
+
+            {% endfor %}
+
+
+            {% endif %}
+        </div>
+
+        <button class="btn btn-sm btn-primary float-end" type="submit">Guardar</button>
+    </form>
+</div>
+{% endblock %}

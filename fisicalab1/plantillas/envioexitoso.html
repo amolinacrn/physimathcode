@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="class_registro">
+    <div style="width: 50rem;">
+
+        <! <center>
+            <b style="font-size:30px;">
+                Muy bien, su información fue procesada con exito.
+            </b>
+            <br>
+            <b style="font-size:20px;">
+                A continuación se muestran los integrantes del informe
+            </b>
+            </center>
+            <br>
+            <br>
+
+            <form enctype="multipart/form-data" action="" method="post" style="margin-bottom:0;">
+
+                {% csrf_token %}
+
+                <table width="80%">
+                    <tr>
+                        <td>
+                            <b>Nombres</b>
+                            <br>
+                            <br>
+                            <ul>
+                                {% for o in nombres %}
+                                <li>
+                                    {{o}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+
+                            <b>programa</b>
+                            <br>
+                            <br>
+
+                            <ul>
+                                {% for o in nombres %}
+                                <li>
+                                    {{Programa}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <b>nota cuantitativa</b>
+                            <br>
+                            <br>
+                            <ul>
+                                {% for o in nombres %}
+                                <li>
+                                    {{Nota}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+
+                {{forms.soporte|as_crispy_field}}
+
+                <br>
+
+                <b>Ahora pude regresar nuevamente al formulario y diligenciar un nuevo informe o descargar el
+                    informe</b>
+
+                </br>
+                </br>
+                <table width="100%">
+                    <tr>
+                        <td width="68%">
+                            <a class="btn btn-sm btn-outline-primary" href="{% url 'analisys' %} ">Nuevo
+                                informe
+                            </a>
+                        </td>
+
+                        <td>
+                            <a target="_blank" class="btn btn-sm btn-outline-primary" href="{% url 'viewLaTex' %}"
+                                type="application/pdf">
+                                Descargar
+                                informe
+                            </a>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" type="submit">
+                                Enviar informe
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+    </div>
+</div>
+
+{% endblock %}

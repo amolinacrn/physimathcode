@@ -1,0 +1,132 @@
+{% extends "baselocal.html" %}
+
+{% load static %}
+
+{% block content_body %}
+
+<!-- 
+    <hr size="1" color="rgb(139, 137, 137)">
+    <br>
+    -->
+<table style="width: 100%;text-align: left; border-bottom: 1px solid; border-bottom-color:rgb(127, 127, 128)">
+  <tr>
+    <td style="width: 30%; background-color: rgba(45, 167, 233, 0.696);">
+      <b class="text-uppercase" style="font-size: 20px">datos del grupo </b>
+    </td>
+    <td style="width: 70%">
+    </td>
+
+  </tr>
+</table>
+</p>
+<table style="width:100%;">
+  <tr>
+    <td style="width:40%;">
+      <b class="text-uppercase">nombres</b>
+      </p>
+      <ul>
+        {% for o in nombres %}
+        <li>
+          {{o}}
+        </li>
+        {% endfor %}
+      </ul>
+    </td>
+
+    <td style="width:30%;">
+      <b class="text-uppercase">programa</b>
+      </p>
+      <ul>
+        {% for o in nombres %}
+        <li>
+          {{Programa}}
+        </li>
+        {% endfor %}
+      </ul>
+    </td>
+
+    <td>
+      <b class="text-uppercase">fecha</b>
+      </p>
+      <ul>
+        {% for o in nombres %}
+        <li>
+          {{calendario}}
+        </li>
+        {% endfor %}
+      </ul>
+    </td>
+
+    <td>
+      <b class="text-uppercase">grupo</b>
+      </p>
+      <ul>
+        {% for o in nombres %}
+        <li>
+          {{grupo}}
+        </li>
+        {% endfor %}
+      </ul>
+
+    </td>
+
+    <td>
+      <b class="text-uppercase ">nota</b>
+      </p>
+      <ul>
+        {% for o in nombres %}
+        <li>
+          {{Nota}}
+        </li>
+        {% endfor %}
+      </ul>
+    </td>
+
+  </tr>
+</table>
+<!-- aqui inicia otra tabla para las conclusiones y metodologia -->
+</br>
+
+<table style="width: 100%;text-align: left; border-bottom: 1px solid; border-bottom-color:rgb(127, 127, 128)">
+  <tr>
+    <td style="width: 25%; background-color: rgba(45, 167, 233, 0.696);">
+      <b class="text-uppercase" style="font-size: 20px">metodología </b>
+    </td>
+    <td style="width: 75%">
+    </td>
+
+  </tr>
+</table>
+</p>
+<table style="text-align:justify">
+  <tr>
+    <td>
+      {{metodologia}}
+    </td>
+  </tr>
+</table>
+
+</br>
+
+<center><img src="{{nombre_grafica_jpg}}" style="width: 60%" alt="My image"></center>
+<br>
+<table style="width: 100%;text-align: left; border-bottom: 1px solid; border-bottom-color:rgb(127, 127, 128)">
+  <tr>
+    <td style="width: 25%; background-color: rgba(45, 167, 233, 0.696);">
+      <b class="text-uppercase" style="font-size: 20px">conclusiones </b>
+    </td>
+    <td style="width: 75%">
+    </td>
+
+  </tr>
+</table>
+</p>
+<table style="text-align:justify">
+  <tr>
+    <td>
+      {{conclusiones}}
+    </td>
+  </tr>
+</table>
+
+{% endblock %}
