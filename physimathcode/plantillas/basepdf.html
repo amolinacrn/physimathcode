@@ -1,5 +1,24 @@
 <html>
 
+{% load static %}
+<link href="{% static 'bs532/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<!-- Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+<!-- Styles -->
+<link href="{% static 'bs532/css/gestion.css' %}" rel="stylesheet" />
+<link href="{% static 'bs532/css/cssbase.css' %}" rel="stylesheet" />
+
+<!---   inicio codigo para formulario laboratorio  --->
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <head>
     <style>
@@ -62,6 +81,10 @@
     {% block content_body %}
 
     {% endblock %}
+    <script src="{% static 'bs532/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

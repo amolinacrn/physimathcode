@@ -79,6 +79,7 @@ Array.from(var_img).forEach(async (f) => {
   });
 });
 
+
 // document
 //   .getElementById("enviarFormulariodatospersonales")
 //   .addEventListener("submit", async function (event) {

@@ -54,9 +54,144 @@ def delete_regist(request, id_file):
 @login_required(login_url="/autenticacion/logear")
 def view_pdf_HV(request):
     if request.user.is_authenticated:
+        software_list = [
+            "Excel",
+            "LibreOffice",
+            "Microsoft Word",
+            "Nitro Pro",
+            "Gimp",
+            "Wolfram Matemática",
+            "Jupyter Notebook",
+            "Google Colab",
+            "GitHub",
+            "Power BI",
+            "Zoom",
+            "Meet",
+            "VS Code",
+            "TexMaker",
+            "SO Windows",
+            "SO GNU/Linux",
+            "Overleaf LaTeX",
+            "Python",
+            "C++",
+            "C#",
+            "HTML",
+            "LaTeX",
+            "JavaScript",
+            "CSS",
+            "SqLite",
+            "MySql",
+        ]
+        # Defining the lists for each column
+        nivBasic = [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            30,
+            30,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            20,
+            20,
+            30,
+            20,
+        ]
+        nivInter = [
+            10,
+            5,
+            5,
+            80,
+            50,
+            40,
+            50,
+            20,
+            0,
+            0,
+            80,
+            100,
+            50,
+            100,
+            100,
+            100,
+            80,
+            80,
+            30,
+            10,
+            70,
+            100,
+            0,
+            0,
+            0,
+            0,
+        ]
+        nivAvanz = [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            50,
+            0,
+            30,
+            30,
+            50,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+        ]
+        numBasico = np.round((20 / 100) * np.array(nivBasic))
+        numInterm = np.round((20 / 100) * np.array(nivInter))
+        numaAvanz = np.round((20 / 100) * np.array(nivAvanz))
+        herramientas_informaticas = []
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        contexto = {"dir_img": BASE_DIR, "exp_laboral": [0]}
-        response = render_pdf_view("ver_pdf_hv.html", contexto)
+        for i, valor in enumerate(software_list):
+            herramientas_informaticas.append(
+                {
+                    "Software": valor,
+                    "Basico": int(numBasico[i]) * "|",
+                    "Intermedio": int(numInterm[i]) * "|",
+                    "Avanzado": int(numaAvanz[i]) * "|",
+                    "Basic": nivBasic[i],
+                    "Inter": nivInter[i],
+                    "Avanz": nivAvanz[i],
+                }
+            )
+
+        contexto = {
+            "dir_img": BASE_DIR,
+            "exp_laboral": [0],
+            "herramientas_informaticas": herramientas_informaticas,
+        }
+        response = render(request, "ver_pdf_hv.html", contexto)
+        #response = render_pdf_view("ver_pdf_hv.html", contexto)
         return response
     else:
         return redirect("logear")

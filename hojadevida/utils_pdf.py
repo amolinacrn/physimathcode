@@ -28,7 +28,6 @@ def render_pdf_view(template_path, context_dict={}):
     respuesta_pdf["Content-Disposition"] = "inline; report.pdf"
 
     css_url = os.path.join(settings.BASE_DIR, "static/bs532/css/bootstrap.min.css")
-
     HTML(string=html).write_pdf(respuesta_pdf, stylesheets=[CSS(css_url)])
 
     return respuesta_pdf
