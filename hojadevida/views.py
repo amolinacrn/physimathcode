@@ -81,6 +81,7 @@ def view_pdf_HV(request):
             "CSS",
             "SqLite",
             "MySql",
+            "Django",
         ]
         # Defining the lists for each column
         nivBasic = [
@@ -108,8 +109,9 @@ def view_pdf_HV(request):
             100,
             20,
             20,
-            30,
-            20,
+            80,
+            80,
+            100,
         ]
         nivInter = [
             10,
@@ -138,6 +140,7 @@ def view_pdf_HV(request):
             0,
             0,
             0,
+            40,
         ]
         nivAvanz = [
             0,
@@ -166,6 +169,7 @@ def view_pdf_HV(request):
             0,
             0,
             0,
+            0,
         ]
         numBasico = np.round((20 / 100) * np.array(nivBasic))
         numInterm = np.round((20 / 100) * np.array(nivInter))
@@ -190,8 +194,8 @@ def view_pdf_HV(request):
             "exp_laboral": [0],
             "herramientas_informaticas": herramientas_informaticas,
         }
-        response = render(request, "ver_pdf_hv.html", contexto)
-        #response = render_pdf_view("ver_pdf_hv.html", contexto)
+        # response = render(request, "ver_pdf_hv.html", contexto)
+        response = render_pdf_view("ver_pdf_hv.html", contexto)
         return response
     else:
         return redirect("logear")
