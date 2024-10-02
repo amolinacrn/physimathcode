@@ -24,5 +24,17 @@ Las tecnologías de la información y la comunicación (TIC) juegan un papel fun
 
 ## Tecnologías Utilizadas
 
-- [Listar aquí las tecnologías, lenguajes de programación y herramientas utilizadas en el proyecto]
+- **Lenguajes de Programación**: Python, LaTeX, HTML, CSS, JavaScript
 
+## Instalación
+
+Instrucciones para instalar y configurar el proyecto en su entorno local.
+
+```bash
+# Clonar el repositorio
+git clone [URL del repositorio]
+
+# Navegar al directorio del proyecto
+cd [nombre del proyecto]
+
+# Instrucciones de instalación específicas
