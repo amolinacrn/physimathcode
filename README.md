@@ -1,4 +1,4 @@
-# Automatización y Evaluación de Informes de Laboratorio de Física
+# physimathcode: una aplicación para la Automatización, desarrolo y Evaluación de Informes de Laboratorio de Física
 
 ## Descripción del Proyecto
 
