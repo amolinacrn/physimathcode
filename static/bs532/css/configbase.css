@@ -1,0 +1,174 @@
+    @font-face {
+      font-family: 'Barlow';
+      src: url('/static/fonts/Oswald/static/Oswald-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .miNombreMolina {
+      margin-top: 35px;
+      position: absolute;
+      font-family: 'Barlow';
+      font-weight: 500;
+      font-size: 25px;
+      color: #ff3838e7;
+      display: block;
+      left: 50px;
+
+    }
+
+    /*1vw=1%*/
+
+    .mitex_underline {
+      font-family: 'Barlow';
+      font-weight: 50;
+      /* top: 150px; */
+      border-bottom: 12px solid #fc4b4b;
+      color: #ffffff;
+      width: 80%;
+      left: 10%;
+      /* font-size: 10px; */
+      text-transform: uppercase;
+      /* line-height: 20px; */
+      position: relative;
+      z-index: 1
+    }
+
+    .div_superior {
+      height: 340px;
+      width: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.315), rgba(0, 0, 0, 0.315)), url('/static/bs532/img/imf.jpeg');
+      background-position: center;
+      background-size: cover;
+    }
+
+    .div_inferior {
+      width: 100%;
+      padding: 20px;
+      background-color: rgb(255, 255, 255);
+      text-align: justify;
+
+    }
+
+    .button {
+      background-color: rgba(255, 0, 0, 0);
+      border: none;
+      cursor: pointer;
+      display: flex;
+    }
+
+
+    .ancho_acordeon {
+      margin-top: 120px;
+    }
+
+    .accordion-icon {
+      padding: 0px;
+      margin-left: 13px;
+    }
+
+    .active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+    }
+
+    .accordion_body {
+      top: -18px;
+      margin-left: 66px;
+      background-color: #dd090900;
+      width: 150px;
+      position: relative;
+    }
+
+    .accordion-icon {
+      margin-right: 0px;
+      transition: transform 0.3s;
+    }
+
+    .active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .mainboton {
+      margin-top: 7%;
+      background-color: rgba(102, 51, 153, 0);
+      margin-left: 2.5%;
+      position: absolute;
+    }
+
+    #container_personal {
+      display: flex;
+      z-index: 0
+    }
+
+    /* Panel izquierdo */
+    .leftPanel {
+      padding: 0px;
+      width: 0px;
+      height: 100%;
+      background-color: #e6e5e5;
+      position: fixed;
+      transition: "";
+      overflow: hidden;
+      z-index: 2
+    }
+
+    /* Panel derecho ajustable */
+    .custom_derecho {
+      flex-grow: 1;
+      padding: 0px;
+      margin-left: 250px;
+      transition: "";
+      z-index: 1;
+    }
+
+    /* Estilos del botón de colapso */
+    .collapse-btn {
+      font-family: 'Barlow';
+      background-color: #df171700;
+      color: #ffffff;
+      border: none;
+      padding: 0px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 20px;
+
+    }
+
+    .classTable {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+    }
+
+    .closePanelButon {
+      display: none;
+      top: 20px;
+      left: 20px;
+      background-color: #df171700;
+      border: none;
+      padding: 0px;
+      position: relative;
+    }
+
+    .class_span {
+      font-family: 'Barlow';
+      font-weight: bold;
+      font-size: 25px;
+      opacity: 1;
+      top: -2.5px;
+      position: relative;
+      color: #ffffff;
+
+    }
+
+    /* El botón es visible solo en pantallas más pequeñas */
+    @media (max-width: 1300px) {
+      .miNombreMolina {
+        transition: opacity 0.4s cubic-bezier(0.9, 0.03, 0.69, 0.22);
+        display: none;
+      }
+    }

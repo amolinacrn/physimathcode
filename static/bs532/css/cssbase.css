@@ -14,47 +14,59 @@ li ul {
   top: 40px;
 }
 
+li{
+  margin: 17px 0;
+}
+
 nav > ul > li ul {
   display: none;
 }
 
 nav > ul > li li:hover {
   background-color: rgb(23, 92, 230, 0.1);
+  
 }
 
 nav > ul > li a {
-  color: rgba(8, 26, 66);
+  color: rgb(5, 5, 5);
   font-family: arial;
-  font-size: 0.9rem;
+  font-size:16px;
   font-weight: 900;
   text-decoration: none;
   position: relative;
   vertical-align: middle;
+  margin-left:-3px;
+  padding: 5px;   
 }
+  nav > ul > li a:hover {
+    background-color: #000000;
+    } 
 
 table,
 th,
 td {
-  border: 0px solid black;
+  border: 0px solid rgb(0, 0, 0);
   border-collapse: collapse;
   border-collapse: separate;
   border-spacing: 1px;
 }
 
+/*aplica hover color rojo*/
 nav > ul > li a:hover {
-  color: rgb(23, 92, 230, 0.8);
-  cursor: pointer;
+  color: #ffffff;
+  cursor: pointer; 
 }
 
 nav > ul > li a.active {
-  color: rgb(23, 92, 230, 0.8);
+  color: #ffffff;
+   background-color: #000000;
 }
 
 nav > ul > li:hover ul {
   display: block;
 }
-
-/* button:hover {
+/* 
+button:hover {
       -webkit-transform: scale(1.5);
       -moz-transform: scale(1.5);
       -o-transform: scale(1.5);

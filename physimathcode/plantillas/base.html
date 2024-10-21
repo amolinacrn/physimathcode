@@ -15,12 +15,12 @@
   <!-- Styles -->
   <link href="{% static 'bs532/css/gestion.css' %}" rel="stylesheet" />
   <link href="{% static 'bs532/css/cssbase.css' %}" rel="stylesheet" />
+  <link href="{% static 'bs532/css/configbase.css' %}" rel="stylesheet" />
 
   <!---   inicio codigo para formulario laboratorio  --->
 
-
-  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -33,270 +33,279 @@
 </head>
 
 <body>
+  <!-- Contenedor para ambos paneles -->
+  <div id="container_personal">
+    <!-- Panel izquierdo colapsable -->
+    <div class="leftPanel">
 
-  <nav class="navbar navbar-expand-lg navbar-dark py-lg-0" id="miniNav"
-    style="border: rgba(26, 58, 100, 0.9) 1px solid;">
+      <div style="height: 20px;">
+        <!-- cerra -->
+        <button onclick="toggleLeftPanel()" class="closePanelButon">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="1.5">
+            <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="3" />
+            <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="3" />
+          </svg>
 
-    <table width="100%">
+        </button>
 
-      <tr>
-        <td width="70%">
-          </d>
-        <td width="2%">
-          <a href='https://www.linkedin.com/in/amcern'>
-            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/linkedin.png' %}" alt>
+      </div>
+      <!-- fin cerrar -->
 
-            <a>
-              </d>
-        <td width="2%">
-          <a href="https://www.instagram.com/_alejandro_molina_/">
-            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/instagram.png' %}" alt>
 
-            <a>
-              </d>
-        <td width="2%">
-          <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">
-            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/facebook.png' %}" alt>
 
-            <a>
-              </d>
+      <div class="miNombreMolina">
+        @molina
+      </div>
 
-        <td width="2%">
-          <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">
-            <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/lupa.png' %}" alt>
-            <a>
-        </td>
+      <div class="ancho_acordeon" style="background-color: rgba(60, 209, 90, 0);width:auto;">
+        <div class="accordion" style="background-color: #da060600;width:auto" id="accordionExample">
+          <table>
+            <tr>
+              <td>
+                <button class="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='black' stroke-width='1.5' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"
+                    class="accordion-icon">
+                </button>
+              </td>
+              <td>
+                <nav>
+                  <ul>
+                    <li>
+                      <a class="{% if request.path == '/physimathcode/' %} active {% elif request.path == '/' %} active {% endif %}"
+                        href=" {% url 'Home' %}">Main</a>
+                    </li>
+                  </ul>
+                </nav>
+              </td>
+            </tr>
+          </table>
 
-        {% if user.is_authenticated %}
 
-        <td td width="7%">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item px-lg-0">
-              <a class="nav-link text-uppercase text-expanded">
-                Hola {{ user.username }}
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion_body">
+              <nav>
+                <ul>
+                  <li>
+                    <a class="{% if request.path == '/infocurricular/' %} active {% elif request.path == '/' %} active {% endif %}"
+                      href="{% url 'biography' %}">
+                      Information
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="{% if request.path == '/publications/' %} active {% elif request.path == '/' %} active {% endif %}"
+                      href="{% url 'publications' %}">
+                      Publications
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="{% if request.path == '/fisicalab1/' %} active {% elif request.path == '/' %} active {% endif %}"
+                      href="{% url 'fisilab1' %}">
+                      Classroom
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="{% if request.path == '/gallery/' %} active {% elif request.path == '/' %} active {% endif %}"
+                      href="{% url 'mygallery' %}">
+                      Gallery
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="{% if request.path == '/research/' %} active {% elif request.path == '/' %} active {% endif %}"
+                      href="{% url 'research' %}" style="white-space: nowrap">
+                      Research Interests
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="{% if request.path == '/portafolio/' %} active {% elif request.path == '/' %} active {% endif %}"
+                      href="{% url 'myportafolio' %}">
+                      Portafolio
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="{% if request.path == '/hojadevida/' %} active {% endif %}" href="{% url 'hojadevida' %}">
+                      Resources
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="{% if request.path == '/contact/' %} active {% elif request.path == '/' %} active {% endif %}"
+                      href="{% url 'contactme' %}">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Panel derecho ajustable -->
+    <div class="custom_derecho">
+      <div class="div_superior" id="divSuperior">
+
+        <table class="classTable">
+          <tr>
+            <td>
+              <button onclick="toggleLeftPanel()" class="collapse-btn">
+                <svg width="18" height="18" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" stroke-width='2'>
+                  <rect width="70" height="4" fill="white" />
+                  <rect y="9" width="70" height="4" fill="white" />
+                  <rect y="18" width="70" height="4" fill="white" />
+                </svg>
+              </button>
+            </td>
+            <td style="color: transparent;">
+              -
+            </td>
+            <td>
+              <a href=" {% url 'Home' %}" class="collapse-btn">
+                @molina
               </a>
-            </li>
-          </ul>
-        </td>
-
-        <td width="7%">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item {% if request.path == '/autenticacion/' %}active{% endif %} px-lg-0">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'cerrar_sesion' %}">
-                Cerrar sesion
-              </a>
-            </li>
-          </ul>
-        </td>
+            </td>
+          </tr>
+        </table>
 
 
-        <td width="5%">
-        </td>
+        <div style="text-align: center;">
+          <div id="alejandroMolina" class="mitex_underline">
+            prof. Alejandro Molina
+          </div>
+        </div>
+      </div>
+      {% block content %}
 
-
-        {% else %}
-
-        <td width="4%">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item {% if request.path == '/autenticacion/' %}active{% endif %} px-lg-0">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'logear' %}">Ingresar</a>
-            </li>
-          </ul>
-        </td>
-        <td width="10%">
-
-
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item {% if request.path == '/autenticacion/' %}active{% endif %} px-lg-0">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'autenticacion' %}">Registro</a>
-            </li>
-          </ul>
-        </td>
-        {% endif %}
-      </tr>
-    </table>
-
-  </nav>
-
-  <div class="row" id="xminibar">
-    &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
-    <div class="form-group col-md-4 mb-0" width="10%">
-      <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">
-        <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/PhysiCode_left.png' %}"
-          style="transform: scale(0.8)">
-      </a>
-    </div>
-    <div class="form-group col-md-3 mb-0">
+      {% endblock %}
 
     </div>
-
-    <div class="form-group col-md-4 mb-0">
-      <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">
-        <img class="intro-img img-fluid mb-lg-0" src="{% static 'bs532/img/PhysiCode_right.png' %}"
-          style="transform: scale(0.8)">
-      </a>
-    </div>
-
   </div>
 
-  <nav class=" navbar sticky-top navbar-expand-lg navbar-dark py-lg-0" id="mainNav"
-    style="border: rgb(205, 205, 205) 1px solid;">
+  <script>
 
-    <ul class="navbar-nav mx-auto">
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".button");
 
-      <li class="px-lg-4 py-lg-2">
-        <a class="text-uppercase text-expanded dropdown-toggle 
-                  
-                  {% if request.path == '/' %} active  
-                  {% elif request.path == '/' %} active  
-                  {% endif %}
-                  
-                  " href="#">Home</a>
-      </li>
+      buttons.forEach(button => {
+        button.addEventListener("click", function () {
+          const parentLi = button.parentElement; // Suponiendo que el botón está dentro de un <li>
+          const content = document.querySelector(button.getAttribute("data-bs-target"));
 
+          // Alternar la clase 'active' en el padre para activar el CSS
+          parentLi.classList.toggle("active");
 
-      <li class="px-lg-4 py-lg-2">
+          // Manejo de la expansión y contracción del contenido
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null; // Colapsar
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px"; // Expandir
+          }
+        });
+      });
+    });
 
-        <a class="text-uppercase text-expanded dropdown-toggle 
-        
-        {% if request.path == '/fisicalab1/' %} active  
-        {% elif request.path == '/fisicalab2/' %} active  
-        {% endif %}
-        
-        " href="#" id="dropdownMisCursos">mis cursos</a>
+    function toggleLeftPanel() {
+      let cerrBoton = document.querySelector('.closePanelButon');
+      let widthVentana = document.querySelector('.leftPanel')
 
+      if (widthVentana.style.width === "0px") {
+        cerrBoton.style.display = "block"
+        widthVentana.style.width = "250px"
+        widthVentana.style.transition = "width 0.3s ease"
+      } else {
+        widthVentana.style.width = "0px"
+        widthVentana.style.transition = "width 0.3s ease"
+        cerrBoton.style.display = "none"
+      }
+    }
 
-        <!-- <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-          <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-        </ul> -->
+    function updateLeftPanel() {
+      let anchoLeftVentana = window.innerWidth;
+      let topMenuMolina = document.querySelector(".ancho_acordeon")
+      let cerrarBoton = document.querySelector('.closePanelButon');
+      let leftPanelVentana = document.querySelector('.leftPanel');
+      let customDerecho = document.querySelector('.custom_derecho');
+      if (anchoLeftVentana <= 1300) {
+        topMenuMolina.style.marginTop = "50px";
+        customDerecho.style.marginLeft = "0px"
+        leftPanelVentana.style.width = "0px"
+        leftPanelVentana.style.transition = "width 0.4s cubic-bezier(.66,.02,.87,-0.15)"
+        customDerecho.style.transition = "margin-left 0.4s ease"
 
+      } else {
+        topMenuMolina.style.marginTop = "120px";
+        cerrarBoton.style.display = "none"
+        leftPanelVentana.style.width = "250px"
+        leftPanelVentana.style.transition = "width 0.2s ease"
+        customDerecho.style.marginLeft = "250px"
+        customDerecho.style.transition = "margin-left 0.4s ease"
+      }
 
-        <ul class="dropdown-menu  " aria-labelledby="dropdownMisCursos">
+    }
 
-          <li class="nav-item {% if request.path == '/fisicalab1/' %}  active  {% endif %} ">
-            <center>
-              <a class=" nav-link text-uppercase text-expanded" href="{% url 'fisilab1' %}"
-                style="font-size:12px;">laboratorio física 1</a>
-            </center>
-          </li>
+    //Llama a la función al cargar la página
+    document.addEventListener("DOMContentLoaded", updateLeftPanel);
 
-          <li class="nav-item {% if request.path == '/fisicalab2/' %}  active  {% endif %}">
-            <center>
+    //Llama a la función al redimensionar la ventana
+    window.addEventListener('resize', updateLeftPanel);
 
-              <a class=" nav-link text-uppercase text-expanded" href="{% url 'fisilab2' %}"
-                style="font-size:12px;">laboratorio física 2</a>
-            </center>
-          </li>
-          {% if user.is_staff%}
-          <li class="nav-item {% if request.path == '/fisicalab1/eval_inf' %}  active  {% endif %}">
-            <center>
+    function actualizarColor() {
+      let anchoVentana = window.innerWidth;
+      let mitexElement = document.querySelector('.mitex_underline');
 
-              <a class=" nav-link text-uppercase text-expanded" href="{% url 'eval_inf' %}"
-                style="font-size:12px;">evaluar informes</a>
-            </center>
-          </li>
-          {% endif %}
-        </ul>
+      if (anchoVentana <= 662) {
+        mitexElement.style.top = '90px';
+        mitexElement.style.fontSize = "59px";
+        mitexElement.style.lineHeight = "80px"
+      }
 
+      if (anchoVentana <= 972 && anchoVentana > 662) {
+        mitexElement.style.top = '65px';
+        mitexElement.style.lineHeight = "100px"
+        mitexElement.style.fontSize = "80px";
+      }
+      if (anchoVentana > 972) {
+        mitexElement.style.top = '120px';
+        mitexElement.style.lineHeight = "108px"
+        mitexElement.style.fontSize = "80px";
+      }
+    }
 
-      </li>
+    // Llama a la función al cargar la página
+    document.addEventListener("DOMContentLoaded", actualizarColor);
 
-      <li class="px-lg-4 py-lg-2">
-        <a class="text-uppercase text-expanded dropdown-toggle 
-                  
-                  {% if request.path == '/' %} active  
-                  {% elif request.path == '/' %} active  
-                  {% endif %}
-                  
-                  " href="#">Portafolio</a>
-      </li>
+    // Llama a la función al redimensionar la ventana
+    window.addEventListener('resize', actualizarColor);
 
-      <li class="px-lg-4 py-lg-2">
-        <a class="text-uppercase text-expanded dropdown-toggle 
-                  
-                  {% if request.path == '/hojadevida' %} active  
-                  {% endif %}
-                  
-                  " href="#" id="dropdownhfformatounico">repositorio</a>
+    function updateBotton() {
+      let anchoVentana = window.innerWidth;
+      let collapseElementBtn = document.querySelector('.classTable');
+      if (anchoVentana <= 1300) {
+        collapseElementBtn.style.display = "block";
+      } else {
+        collapseElementBtn.style.display = "none";
+      }
 
-        <ul class="dropdown-menu  " aria-labelledby="dropdownhfformatounico">
+    }
+    document.addEventListener("DOMContentLoaded", updateBotton);
+    window.addEventListener('resize', updateBotton);
 
-          <li class="nav-item {% if request.path == '/hojadevida/' %}  active  {% endif %} ">
-            <center>
-              <a class=" nav-link text-uppercase text-expanded" href="{% url 'hojadevida' %}" style="font-size:12px;">
-                hv formato único
-              </a>
-            </center>
-          </li>
-        </ul>
-      </li>
-
-      <li class="px-lg-4 py-lg-2">
-        <a class="text-uppercase text-expanded dropdown-toggle 
-                  
-                  {% if request.path == '/' %} active  
-                  {% elif request.path == '/' %} active  
-                  {% endif %}
-                  
-                  " href="#">Contacto</a>
-      </li>
-
-      <li class="px-lg-4 py-lg-2">
-        <a class="text-uppercase text-expanded dropdown-toggle 
-                  
-                  {% if request.path == '/' %} active  
-                  {% elif request.path == '/' %} active  
-                  {% endif %}
-                  
-                  " href="#">Blog</a>
-      </li>
-
-    </ul>
-  </nav>
-
-  <!-- Contenido cambiante-->
-  {% block content %}
-
-  {% endblock %}
-
-  <!-- Footer -->
-  <footer class="footer text-faded text-center py-5">
-    <div class="container">
-      <p class="m-0">
-        <a href="#" class="link">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-        <a href="#" class="link">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-        <a href="#" class="link">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </p>
-      <p class="m-0 mbt">
-        <a href="sample.html" class="link">Política de
-          privacidad</a> ·
-        <a href="sample.html" class="link">Aviso legal</a> ·
-        <a href="sample.html" class="link">Cookies</a>
-      </p>
-      <p class="m-0 mbt1">&copy; PhysiMathCode 2024</p>
-    </div>
-  </footer>
-
-
-
+  </script>
   <script src="{% static 'bs532/js/bootstrap.bundle.min.js'%}"></script>
 </body>
+
+
 
 </html>
 

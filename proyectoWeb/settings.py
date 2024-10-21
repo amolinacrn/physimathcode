@@ -48,8 +48,14 @@ INSTALLED_APPS = [
     "fisicalab1",
     "fisicalab2",
     "autenticacion",
-    "hojadevida",
+    "classroom",
     "django_tex",
+    "infocurricular",
+    "publications",
+    "gallery",
+    "research",
+    "portafolio",
+    "contact",
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -76,7 +82,13 @@ TEMPLATES = [
             BASE_DIR / "fisicalab1/plantillas",
             BASE_DIR / "fisicalab2/plantillas",
             BASE_DIR / "autenticacion/plantillas",
-            BASE_DIR / "hojadevida/plantillas",
+            BASE_DIR / "classroom/plantillas",
+            BASE_DIR / "infocurricular/plantillas",
+            BASE_DIR / "publications/plantillas",
+            BASE_DIR / "gallery/plantillas",
+            BASE_DIR / "research/plantillas",
+            BASE_DIR / "portafolio/plantillas",
+            BASE_DIR / "contact/plantillas",
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -94,7 +106,13 @@ TEMPLATES = [
         "BACKEND": "django_tex.engine.TeXEngine",
         "DIRS": [
             BASE_DIR / "fisicalab1/plantillas",
-            BASE_DIR / "hojadevida/plantillas",
+            BASE_DIR / "classroom/plantillas",
+            # BASE_DIR / "infocurricular/plantillas",
+            # BASE_DIR / "publications/plantillas",
+            # BASE_DIR / "gallery/plantillas",
+            # BASE_DIR / "research/plantillas",
+            # BASE_DIR / "portafolio/plantillas",
+            # BASE_DIR / "contact/plantillas",
         ],
     },
 ]
@@ -185,7 +203,7 @@ LATEX_GRAPHICSPATH = [
         settings.BASE_DIR,
         "static",
         "img",
-        "hojadevida",
+        "classroom",
     ),
 ]
 

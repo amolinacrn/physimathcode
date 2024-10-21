@@ -29,5 +29,11 @@ urlpatterns = [
     path("fisicalab2/", include("fisicalab2.urls")),
     path("autenticacion/", include("autenticacion.urls")),
     path("visualizacionfiles/", include("visualizacionfiles.urls")),
-    path("hojadevida/", include("hojadevida.urls")),
+    path("classroom/", include("classroom.urls")),
+    path("infocurricular/", include("infocurricular.urls")),
+    path("publications/", include("publications.urls")),
+    path("gallery/", include("gallery.urls")),
+    path("research/", include("research.urls")),
+    path("portafolio/", include("portafolio.urls")),
+    path("contact/", include("contact.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
