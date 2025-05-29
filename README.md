@@ -1,4 +1,4 @@
-# Physimathcode: una aplicación para la automatización, desarrollo y evaluación de informes de laboratorio de física
+# Plataforma Web Dinámica para la Automatización Académica y la Interacción Estudiante-Docente
 
 **Descripción del Proyecto: Plataforma Dinámica para Automatización de Procesos Académicos**
 
