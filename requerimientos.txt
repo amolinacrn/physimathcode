@@ -1,0 +1,12 @@
+django
+django_tex
+django-crispy-forms
+crispy-bootstrap5==0.1
+numpy
+matplotlib
+iminuit
+probfit
+WeasyPrint==51
+xhtml2pdf==0.2.15
+django_cleanup
+sorl-thumbnail
